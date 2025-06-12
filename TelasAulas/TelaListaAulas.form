@@ -74,25 +74,38 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="menu" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="botaoTelaVeiculos" min="-2" pref="207" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="detalhesBtn" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="menu1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
-                      </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace pref="125" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="menu" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="220" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="botaoSair" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="menu1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="botaoTelaVeiculos" min="-2" pref="207" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="detalhesBtn" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jScrollPane1" alignment="1" min="-2" pref="343" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="114" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+              <Component id="botaoSair" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -101,17 +114,28 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Component id="menu" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="menu1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jComboBox1" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="botaoTelaVeiculos" min="-2" max="-2" attributes="0"/>
-                  <Component id="detalhesBtn" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+                      <Component id="jScrollPane2" pref="70" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="111" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="detalhesBtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="botaoTelaVeiculos" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="198" max="32767" attributes="0"/>
               <Component id="botaoSair" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
           </Group>
@@ -167,7 +191,7 @@
           <Font name="Segoe UI Black" size="18" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="cc" green="66" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Selecionar Aula:"/>
       </Properties>
@@ -183,7 +207,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Detalhes"/>
+        <Property name="text" type="java.lang.String" value="Mais detalhes"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[154, 33]"/>
         </Property>
@@ -212,5 +236,71 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoTelaVeiculosActionPerformed"/>
       </Events>
     </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+    </Container>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="TabelaLista">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                <EtchetBorder/>
+              </Border>
+            </Property>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+              <Table columnCount="3" rowCount="5">
+                <Column editable="true" title="Data" type="java.lang.Object">
+                  <Data value="13/07/2025"/>
+                  <Data value="16/07/2025"/>
+                  <Data value="19/07/2025"/>
+                  <Data value="null"/>
+                  <Data value="null"/>
+                </Column>
+                <Column editable="true" title="Hor&#xe1;rio de Entrada" type="java.lang.Object">
+                  <Data value="14:00"/>
+                  <Data value="14:00"/>
+                  <Data value="14:00"/>
+                  <Data value="null"/>
+                  <Data value="null"/>
+                </Column>
+                <Column editable="true" title="Hor&#xe1;rio de Sa&#xed;da" type="java.lang.Object">
+                  <Data value="15:00"/>
+                  <Data value="15:00"/>
+                  <Data value="15:00"/>
+                  <Data value="null"/>
+                  <Data value="null"/>
+                </Column>
+              </Table>
+            </Property>
+            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+              <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+              </TableColumnModel>
+            </Property>
+            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>

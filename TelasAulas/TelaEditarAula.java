@@ -4,6 +4,8 @@
  */
 package com.mycompany.move_auto_escola.TelasAulas;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Dev. Desktop
@@ -41,6 +43,7 @@ public class TelaEditarAula extends javax.swing.JPanel {
         jTextField6 = new javax.swing.JTextField();
         botaoTelaVeiculos2 = new javax.swing.JButton();
         menu1 = new javax.swing.JLabel();
+        botaoSair = new javax.swing.JButton();
 
         menu4.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         menu4.setForeground(new java.awt.Color(255, 255, 255));
@@ -86,6 +89,16 @@ public class TelaEditarAula extends javax.swing.JPanel {
         menu1.setForeground(new java.awt.Color(255, 255, 255));
         menu1.setText("Editar Aula");
 
+        botaoSair.setBackground(new java.awt.Color(0, 0, 102));
+        botaoSair.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        botaoSair.setForeground(new java.awt.Color(255, 255, 255));
+        botaoSair.setText("Voltar");
+        botaoSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoSairActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -114,7 +127,10 @@ public class TelaEditarAula extends javax.swing.JPanel {
                         .addComponent(botaoTelaVeiculos2, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(149, 149, 149)
-                        .addComponent(menu1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(menu1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(botaoSair)))
                 .addContainerGap(77, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -148,16 +164,23 @@ public class TelaEditarAula extends javax.swing.JPanel {
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botaoTelaVeiculos2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(botaoSair)
+                .addContainerGap(11, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoTelaVeiculos2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoTelaVeiculos2ActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Edição realizada com sucesso");
     }//GEN-LAST:event_botaoTelaVeiculos2ActionPerformed
+
+    private void botaoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSairActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoSairActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoSair;
     private javax.swing.JButton botaoTelaVeiculos2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;

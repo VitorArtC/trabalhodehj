@@ -13,7 +13,7 @@ public class TelaDetalhesAula extends javax.swing.JPanel {
     /**
      * Creates new form TelaDetalhesAula
      */
-    public TelaDetalhesAula() {
+    public TelaDetalhesAula(PrincipalAula aThis) {
         initComponents();
     }
 
@@ -28,8 +28,8 @@ public class TelaDetalhesAula extends javax.swing.JPanel {
 
         menu = new javax.swing.JLabel();
         botaoSair = new javax.swing.JButton();
-        botaoTelaVeiculos = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        botaoEditarAula = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
@@ -44,84 +44,86 @@ public class TelaDetalhesAula extends javax.swing.JPanel {
         botaoSair.setForeground(new java.awt.Color(255, 255, 255));
         botaoSair.setText("Voltar");
 
-        botaoTelaVeiculos.setBackground(new java.awt.Color(0, 102, 204));
-        botaoTelaVeiculos.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        botaoTelaVeiculos.setForeground(new java.awt.Color(255, 255, 255));
-        botaoTelaVeiculos.setText("Editar Aula");
-        botaoTelaVeiculos.addActionListener(new java.awt.event.ActionListener() {
+        botaoEditarAula.setBackground(new java.awt.Color(0, 102, 204));
+        botaoEditarAula.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        botaoEditarAula.setForeground(new java.awt.Color(255, 255, 255));
+        botaoEditarAula.setText("Editar Aula");
+        botaoEditarAula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoTelaVeiculosActionPerformed(evt);
+                botaoEditarAulaActionPerformed(evt);
             }
         });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {"Vitor Arthur", "Rogério Padeiro", "Volkswagen Gol", "13/06/2025", "14h", "15h"}
             },
             new String [] {
-                "ID", "Aluno", "Instrutor", "Veículo", "Data", "Início", "Término"
+                "Nome", "Instrutor", "Veículo", "Data", "Início", "Término"
             }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
+        ));
         jScrollPane1.setViewportView(jTable1);
 
-        jScrollPane2.setViewportView(jScrollPane1);
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(106, 106, 106))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(99, Short.MAX_VALUE)
-                .addComponent(botaoSair)
-                .addGap(101, 101, 101)
-                .addComponent(botaoTelaVeiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(121, 121, 121))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(43, 43, 43)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(botaoEditarAula, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(menu)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(menu)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(51, 51, 51)
+                        .addComponent(botaoSair)))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addGap(37, 37, 37)
                 .addComponent(menu)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoSair)
-                    .addComponent(botaoTelaVeiculos))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(botaoEditarAula, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                .addComponent(botaoSair)
+                .addGap(46, 46, 46))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botaoTelaVeiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoTelaVeiculosActionPerformed
+    private void botaoEditarAulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEditarAulaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoTelaVeiculosActionPerformed
+    }//GEN-LAST:event_botaoEditarAulaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoEditarAula;
     private javax.swing.JButton botaoSair;
-    private javax.swing.JButton botaoTelaVeiculos;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel menu;
     // End of variables declaration//GEN-END:variables

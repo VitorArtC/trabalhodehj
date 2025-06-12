@@ -4,6 +4,8 @@
  */
 package com.mycompany.move_auto_escola.TelasAulas;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Dev. Desktop
@@ -173,7 +175,7 @@ public class TelaAgendaAulas extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoTelaVeiculos2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoTelaVeiculos2ActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Aula agendada com sucesso!");
     }//GEN-LAST:event_botaoTelaVeiculos2ActionPerformed
 
     private void botaoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSairActionPerformed

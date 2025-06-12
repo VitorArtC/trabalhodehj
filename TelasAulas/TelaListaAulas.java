@@ -4,6 +4,8 @@
  */
 package com.mycompany.move_auto_escola.TelasAulas;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Dev. Desktop
@@ -13,7 +15,7 @@ public class TelaListaAulas extends javax.swing.JPanel {
     /**
      * Creates new form TelaListaAulas
      */
-    public TelaListaAulas() {
+    public TelaListaAulas(PrincipalAula aThis) {
         initComponents();
     }
 
@@ -35,6 +37,9 @@ public class TelaListaAulas extends javax.swing.JPanel {
         menu1 = new javax.swing.JLabel();
         detalhesBtn = new javax.swing.JButton();
         botaoTelaVeiculos = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TabelaLista = new javax.swing.JTable();
 
         botaoTelaAlunos2.setBackground(new java.awt.Color(0, 102, 204));
         botaoTelaAlunos2.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
@@ -80,13 +85,13 @@ public class TelaListaAulas extends javax.swing.JPanel {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vitor Arthur Andrade Cambui", "Pedro Henrique Silva de Oliveira", "Marcos Wendel" }));
 
         menu1.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        menu1.setForeground(new java.awt.Color(255, 255, 255));
+        menu1.setForeground(new java.awt.Color(0, 102, 204));
         menu1.setText("Selecionar Aula:");
 
         detalhesBtn.setBackground(new java.awt.Color(0, 102, 204));
         detalhesBtn.setFont(new java.awt.Font("Segoe UI Black", 0, 10)); // NOI18N
         detalhesBtn.setForeground(new java.awt.Color(255, 255, 255));
-        detalhesBtn.setText("Detalhes");
+        detalhesBtn.setText("Mais detalhes");
         detalhesBtn.setMaximumSize(new java.awt.Dimension(154, 33));
         detalhesBtn.setMinimumSize(new java.awt.Dimension(154, 33));
         detalhesBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -105,40 +110,72 @@ public class TelaListaAulas extends javax.swing.JPanel {
             }
         });
 
+        TabelaLista.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        TabelaLista.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"13/07/2025", "14:00", "15:00"},
+                {"16/07/2025", "14:00", "15:00"},
+                {"19/07/2025", "14:00", "15:00"},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Data", "Horário de Entrada", "Horário de Saída"
+            }
+        ));
+        jScrollPane1.setViewportView(TabelaLista);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(134, 134, 134)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(menu)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(botaoTelaVeiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(detalhesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(menu1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(botaoSair))
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addContainerGap(125, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(menu)
+                        .addGap(220, 220, 220))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(menu1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(botaoTelaVeiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(detalhesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(123, 123, 123))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(botaoSair)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(menu)
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(menu1)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botaoTelaVeiculos)
-                    .addComponent(detalhesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 198, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                        .addGap(28, 28, 28))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(detalhesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botaoTelaVeiculos))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(botaoSair)
                 .addGap(29, 29, 29))
         );
@@ -153,7 +190,14 @@ public class TelaListaAulas extends javax.swing.JPanel {
     }//GEN-LAST:event_botaoTelaAlunos2ActionPerformed
 
     private void detalhesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detalhesBtnActionPerformed
-        // TODO add your handling code here:
+        int i = TabelaLista.getSelectedRow();
+        
+        if(i>= 0){
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Selecione alguma aula");
+        }
     }//GEN-LAST:event_detalhesBtnActionPerformed
 
     private void botaoTelaAlunos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoTelaAlunos1ActionPerformed
@@ -166,6 +210,7 @@ public class TelaListaAulas extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TabelaLista;
     private javax.swing.JButton botaoSair;
     private javax.swing.JButton botaoTelaAlunos1;
     private javax.swing.JButton botaoTelaAlunos2;
@@ -173,6 +218,8 @@ public class TelaListaAulas extends javax.swing.JPanel {
     private javax.swing.JButton detalhesBtn;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JScrollBar jScrollBar1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel menu;
     private javax.swing.JLabel menu1;
     // End of variables declaration//GEN-END:variables
